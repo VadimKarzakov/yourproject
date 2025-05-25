@@ -1,0 +1,96 @@
+.moments-container {
+    padding: 2rem;
+    background-color: #f0f4f8;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.moments-title {
+    font-size: 32px;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.moments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.moment-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transform: scale(1);
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.moment-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.moment-card.expanded {
+    transform: scale(1.05);
+}
+
+.moment-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.moment-info {
+    padding: 1rem;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.moment-title {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    color: #003366;
+}
+
+.moment-caption {
+    font-size: 16px;
+    color: #555;
+}
+
+.moment-details {
+    margin-top: 1rem;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
